@@ -7,7 +7,10 @@
     <UseWPF>true</UseWPF>
     <Version>1.0.0-alpha20210121</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageProjectUrl>https://github.com/JensKrumsieck/ThemeCommons</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/JensKrumsieck/ThemeCommons</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
 </Project>
