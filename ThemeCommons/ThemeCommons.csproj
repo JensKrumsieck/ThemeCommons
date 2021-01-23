@@ -5,7 +5,7 @@
     <Authors>Jens Krumsieck</Authors>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
-    <Version>1.0.0-alpha20210121</Version>
+    <Version>1.0.0-alpha20210123</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/JensKrumsieck/ThemeCommons</PackageProjectUrl>
     <RepositoryUrl>https://github.com/JensKrumsieck/ThemeCommons</RepositoryUrl>
