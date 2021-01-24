@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -14,12 +15,12 @@ namespace ThemeCommons.Controls
             CommandBindings.Add(new CommandBinding(SystemCommands.RestoreWindowCommand, RestoreCommand_Executed));
         }
 
-        private void MinimizeCommand_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e) => WindowCommand(SystemCommands.MinimizeWindow);
-        private void CloseCommand_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e) => WindowCommand(SystemCommands.CloseWindow);
-        private void MaximizeCommand_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e) => WindowCommand(SystemCommands.MaximizeWindow);
-        private void RestoreCommand_Executed(object sender, System.Windows.Input.ExecutedRoutedEventArgs e) => WindowCommand(SystemCommands.RestoreWindow);
+        private void MinimizeCommand_Executed(object sender, ExecutedRoutedEventArgs e) => WindowCommand(SystemCommands.MinimizeWindow);
+        private void CloseCommand_Executed(object sender, ExecutedRoutedEventArgs e) => WindowCommand(SystemCommands.CloseWindow);
+        private void MaximizeCommand_Executed(object sender, ExecutedRoutedEventArgs e) => WindowCommand(SystemCommands.MaximizeWindow);
+        private void RestoreCommand_Executed(object sender, ExecutedRoutedEventArgs e) => WindowCommand(SystemCommands.RestoreWindow);
 
-        internal void WindowCommand(System.Action<Window> action) => action(Window.GetWindow(this));
+        internal void WindowCommand(Action<Window> action) => action(Window.GetWindow(this));
     }
 
 }
