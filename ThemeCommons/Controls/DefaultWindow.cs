@@ -4,6 +4,11 @@ namespace ThemeCommons.Controls
 {
     public class DefaultWindow : Window
     {
+        static DefaultWindow()
+        {
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(DefaultWindow), new FrameworkPropertyMetadata(typeof(DefaultWindow)));
+        }
+
         public FrameworkElement TitlebarContent
         {
             get => (FrameworkElement)GetValue(TitlebarContentProperty);

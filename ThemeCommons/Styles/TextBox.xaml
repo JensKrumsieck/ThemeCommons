@@ -1,0 +1,41 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converter="clr-namespace:ThemeCommons.Converter"
+                    xmlns:controls="clr-namespace:ThemeCommons.Controls">
+    <Style TargetType="{x:Type TextBox}" x:Key="ColorPickerTextBox">
+        <Setter Property="Height" Value="32"/>
+        <Setter Property="Width" Value="120"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Padding" Value="0"></Setter>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Grid Width="{TemplateBinding Width}"  Height="{TemplateBinding Height}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" 
+                                            BorderThickness="{TemplateBinding BorderThickness}" x:Name="PART_OuterBorder">
+                            <StackPanel Orientation="Horizontal" Margin="2.5">
+                                <Border Width="{TemplateBinding Height, Converter={converter:AddValueConverter}, ConverterParameter=-5}" Height="{TemplateBinding Height, Converter={converter:AddValueConverter}, ConverterParameter=-5}" 
+                                                    Background="{Binding ElementName=ColorPicker, Path=SelectedBrush}" CornerRadius="5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <TextBox Text="{Binding ElementName=ColorPicker, Path=SelectedHexString}"
+                                                     FontSize="{TemplateBinding FontSize}" FontWeight="{TemplateBinding FontWeight}"
+                                                     VerticalContentAlignment="Center" BorderThickness="0" x:Name="PART_Box" HorizontalAlignment="Right"/>
+                            </StackPanel>
+                        </Border>
+                        <Popup x:Name="PART_Popup" PlacementTarget="{Binding ElementName=PART_Box}" PopupAnimation="Fade" Width="300">
+                            <Border Background="{TemplateBinding Background}">
+                                <controls:ColorPicker x:Name="ColorPicker" SelectedHexString="#ccc" Foreground="{TemplateBinding Foreground}" FontSize="12" FontWeight="Regular"/>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                            <Setter TargetName="PART_Popup" Property="IsOpen" Value="True"/>
+                            <Setter TargetName="PART_OuterBorder" Property="BorderBrush" Value="{DynamicResource DarkBlue}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:controls="clr-namespace:ThemeCommons.Controls">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/Colors.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/Titlebar.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/TextBox.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/Window.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    <Style TargetType="{x:Type controls:DefaultWindow}" BasedOn="{StaticResource WindowStyle}"/>
+</ResourceDictionary>

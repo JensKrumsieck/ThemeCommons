@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿#nullable enable
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Media;
 using ThemeCommons.Extension;
@@ -108,3 +109,4 @@ namespace ThemeCommons.Primitives
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }
+#nullable restore
