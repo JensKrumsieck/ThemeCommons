@@ -1,7 +1,7 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="clr-namespace:ThemeCommons.Controls">
-    <Style TargetType="{x:Type controls:DefaultWindow}" x:Key="WindowStyle">
+    <Style TargetType="{x:Type controls:DefaultWindow}" x:Key="DefaultWindow">
         <Setter Property="WindowStyle" Value="None"/>
         <Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
         <Setter Property="TitlebarHeight" Value="35"/>

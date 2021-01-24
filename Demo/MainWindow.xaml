@@ -13,12 +13,18 @@
             <Label Content="{Binding Title, ElementName=TheWindow}" FontSize="16" Foreground="{DynamicResource Light}" FontWeight="SemiBold"/>
         </Grid>
     </controls:DefaultWindow.TitlebarContent>
-    <Grid> 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <TextBox Grid.Column="1" Style="{StaticResource ColorPickerTextBox}"/>
-
-    </Grid>
+    <UniformGrid>
+        <TextBox Style="{StaticResource ColorPickerTextBox}"/>
+        <UniformGrid Background="{DynamicResource Dark}">
+            <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB51;"/>
+            <Button Style="{StaticResource RoundedIconButton}" Content="&#xE106;"/>
+            <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB4C;"/>
+            <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB4E;"/>
+            <Button Style="{StaticResource RoundedIconButton}" Content="&#xE939;"/>
+            <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="False"/>
+            <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="True"/>
+            <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="True" Foreground="Red"/>
+            <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="True" Foreground="Red" Background="{DynamicResource Light}"/>
+        </UniformGrid>
+    </UniformGrid>
 </controls:DefaultWindow>
