@@ -1,0 +1,30 @@
+﻿<controls:DefaultWindow x:Class="Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo"
+        xmlns:controls="clr-namespace:ThemeCommons.Controls;assembly=ThemeCommons"
+        mc:Ignorable="d"
+        Style="{DynamicResource WindowStyle}"
+        Background="{DynamicResource Light}"
+        x:Name="DefaultWindow"
+        Title="MainWindow" Height="450" Width="800">
+    <controls:DefaultWindow.TitlebarContent>
+        <Grid VerticalAlignment="Center">
+            <Label Content="{Binding Title, ElementName=DefaultWindow}" FontSize="16" Foreground="{DynamicResource Light}" FontWeight="SemiBold"/>
+        </Grid>
+    </controls:DefaultWindow.TitlebarContent>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <Rectangle Width="150" Height="150" Fill="{Binding ElementName=ColorPicker, Path=SelectedBrush}"/>
+            <TextBlock Text="{Binding ElementName=ColorPicker, Path=SelectedHexString}"/>
+        </StackPanel>
+        <controls:ColorPicker Grid.Column="1" x:Name="ColorPicker" SelectedHexString="#ccc"/>
+
+    </Grid>
+</controls:DefaultWindow>
