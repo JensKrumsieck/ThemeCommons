@@ -48,7 +48,7 @@
                 <ControlTemplate TargetType="{x:Type ContentControl}">
                     <Grid Background="{TemplateBinding Background}" Height="{TemplateBinding Height}">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=IconSize, FallbackValue={x:Static SystemParameters.SmallIconWidth}, Converter={converter:AddValueConverter}, ConverterParameter=5}"/>
+                            <ColumnDefinition Width="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=IconSize, FallbackValue={x:Static SystemParameters.SmallIconWidth}, Converter={converter:AddValueConverter}, ConverterParameter=15}"/>
                             <ColumnDefinition/>
                             <ColumnDefinition Width="47"/>
                             <ColumnDefinition Width="47"/>
