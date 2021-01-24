@@ -1,5 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Windows;
 // ReSharper disable PossibleNullReferenceException
 // ReSharper disable InconsistentNaming
@@ -19,6 +21,14 @@ namespace ThemeCommons.Extension
 
         [DllImport("user32.dll")]
         private static extern IntPtr MonitorFromWindow(IntPtr handle, int flags);
+
+        [DllImport("user32.dll")]
+        public static extern bool SetForegroundWindow(IntPtr hWnd);
+
+        [DllImport("User32.dll", EntryPoint = "SendMessage")]
+        private static extern int SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, ref COPYDATASTRUCT lParam);
+
+        private const int WM_COPYDATA = 0x004A;
 
         /// <summary>
         /// See https://stackoverflow.com/questions/6890472/wpf-maximize-window-with-windowstate-problem-application-will-hide-windows-ta
@@ -46,6 +56,54 @@ namespace ThemeCommons.Extension
             Marshal.StructureToPtr(mmi, lParam, true);
         }
 
+        /// <summary>
+        /// Native Methods from WinAPI to Send and Get Messages between instances
+        /// https://www.codeproject.com/Articles/1224031/Passing-Parameters-to-a-Running-Application-in-WPF
+        /// </summary>
+        public static string GetMessage(int message, IntPtr lParam)
+        {
+            if (message != WM_COPYDATA) return null;
+            try
+            {
+                var data = Marshal.PtrToStructure<COPYDATASTRUCT>(lParam);
+                var result = (string)data.lpData.Clone();
+                return result;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Native Methods from WinAPI to Send and Get Messages between instances
+        /// https://www.codeproject.com/Articles/1224031/Passing-Parameters-to-a-Running-Application-in-WPF
+        /// </summary>
+        public static void SendMessage(IntPtr hwnd, string message)
+        {
+            var messageBytes = Encoding.Unicode.GetBytes(message);
+            var data = new COPYDATASTRUCT
+            {
+                dwData = IntPtr.Zero,
+                lpData = message,
+                cbData = messageBytes.Length + 1 /* +1 because of \0 string termination */
+            };
+
+            if (SendMessage(hwnd, WM_COPYDATA, IntPtr.Zero, ref data) != 0)
+                throw new Win32Exception(Marshal.GetLastWin32Error());
+        }
+
+        #region WinAPI Structs
+        [StructLayout(LayoutKind.Sequential)]
+        private struct COPYDATASTRUCT
+        {
+            public IntPtr dwData;
+            public int cbData;
+
+            [MarshalAs(UnmanagedType.LPWStr)]
+            public string lpData;
+        }
+
         [StructLayout(LayoutKind.Sequential)]
         public struct POINT
         {
@@ -70,7 +128,7 @@ namespace ThemeCommons.Extension
 
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
         public class MONITORINFO
-        {           
+        {
             public int cbSize = Marshal.SizeOf(typeof(MONITORINFO));
             public RECT rcMonitor = new RECT();
             public RECT rcWork = new RECT();
@@ -121,6 +179,7 @@ namespace ThemeCommons.Extension
             public override int GetHashCode() => left.GetHashCode() + top.GetHashCode() + right.GetHashCode() + bottom.GetHashCode();
             public static bool operator ==(RECT rect1, RECT rect2) => (rect1.left == rect2.left && rect1.top == rect2.top && rect1.right == rect2.right && rect1.bottom == rect2.bottom);
             public static bool operator !=(RECT rect1, RECT rect2) => !(rect1 == rect2);
-        }
+        } 
+        #endregion
     }
 }
