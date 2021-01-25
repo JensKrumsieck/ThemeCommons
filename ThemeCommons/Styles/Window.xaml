@@ -5,6 +5,7 @@
         <Setter Property="WindowStyle" Value="None"/>
         <Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
         <Setter Property="TitlebarHeight" Value="35"/>
+        <Setter Property="AllowsTransparency" Value="True"/>
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome CaptionHeight="35" GlassFrameThickness="0" NonClientFrameEdges="None"
@@ -15,10 +16,18 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:DefaultWindow}">
-                    <Border x:Name="PART_Container" Background="{TemplateBinding Background}" BorderThickness="0">
+                    <Border x:Name="PART_Container" BorderThickness="0">
                         <Grid>
+                            <Rectangle x:Name="tintLayer" Fill="{TemplateBinding Background}" Opacity=".95"/>
+                            <Rectangle x:Name="noiseLayer" Opacity=".01">
+                                <Rectangle.Fill>
+                                    <ImageBrush ImageSource="pack://application:,,,/ThemeCommons;component/Assets/noise.png"
+                                                TileMode="Tile" Stretch="None"
+                                                ViewportUnits="Absolute" Viewport="0,0,128,128"/>
+                                </Rectangle.Fill>
+                            </Rectangle>
                             <DockPanel>
-                                <controls:Titlebar Background="{DynamicResource Dark}" DockPanel.Dock="Top" 
+                                <controls:Titlebar  DockPanel.Dock="Top" Background="{DynamicResource Dark}"
                                                    TextOptions.TextRenderingMode="ClearType" TextOptions.TextFormattingMode="Display" 
                                                    x:Name="PART_Titlebar" Content="{TemplateBinding TitlebarContent}" Height="{TemplateBinding TitlebarHeight}"/>
                                 <AdornerDecorator>

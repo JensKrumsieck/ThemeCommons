@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:controls="clr-namespace:ThemeCommons.Controls;assembly=ThemeCommons"
         mc:Ignorable="d"
-        Background="{DynamicResource Light}"
+        Background="{StaticResource Dark}"
         x:Name="TheWindow"
         Title="MainWindow" Height="450" Width="800">
     <controls:DefaultWindow.TitlebarContent>
