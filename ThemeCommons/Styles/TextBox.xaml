@@ -3,9 +3,9 @@
                     xmlns:converter="clr-namespace:ThemeCommons.Converter"
                     xmlns:controls="clr-namespace:ThemeCommons.Controls"
                     xmlns:extension="clr-namespace:ThemeCommons.Extension">
-    <Style TargetType="{x:Type TextBox}" x:Key="DefaultTextBox">
+    <Style TargetType="{x:Type TextBox}" x:Key="ThemeCommonsDefaultTextBox">
         <Setter Property="Background" Value="{DynamicResource Background}"/>
-        <Setter Property="Height" Value="34"/>
+        <Setter Property="Height" Value="30"/>
         <Setter Property="Foreground" Value="{DynamicResource Foreground}"/>
         <Setter Property="Border.CornerRadius" Value="{DynamicResource CornerRadius}"/>
         <Setter Property="BorderBrush" Value="{DynamicResource BlueBorder}"/>
@@ -36,7 +36,7 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type TextBox}" x:Key="ColorPickerTextBox" BasedOn="{StaticResource DefaultTextBox}">
+    <Style TargetType="{x:Type TextBox}" x:Key="ColorPickerTextBox" BasedOn="{StaticResource ThemeCommonsDefaultTextBox}">
         <Setter Property="Width" Value="120"/>
         <Setter Property="Template">
             <Setter.Value>

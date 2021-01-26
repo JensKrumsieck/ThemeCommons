@@ -4,7 +4,7 @@
                     xmlns:markupExtensions="clr-namespace:ThemeCommons.MarkupExtensions">
     <Style TargetType="{x:Type controls:DefaultWindow}" x:Key="DefaultWindow">
         <Setter Property="FontFamily" Value="{markupExtensions:Font FontFamily=Montserrat}"/>
-        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="FontSize" Value="12"/>
         <Setter Property="WindowStyle" Value="None"/>
         <Setter Property="TextOptions.TextFormattingMode" Value="Ideal"/>
         <Setter Property="TextOptions.TextRenderingMode" Value="Auto"/>

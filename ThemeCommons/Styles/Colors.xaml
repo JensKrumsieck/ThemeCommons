@@ -8,6 +8,8 @@
     <Color x:Key="GreenColor">#7bc74d</Color>
     <Color x:Key="BlueColor">#0092ca</Color>
     <Color x:Key="RedColor">#bd2c00</Color>
+    <Color x:Key="PurpleColor">#7971ea</Color>
+    <Color x:Key="YellowColor">#fcda05</Color>
 
     <SolidColorBrush x:Key="Light" Color="{StaticResource LightColor}"/>
     <SolidColorBrush x:Key="Dark" Color="{StaticResource DarkColor}"/>
@@ -16,6 +18,8 @@
     <SolidColorBrush x:Key="Green" Color="{StaticResource GreenColor}"/>
     <SolidColorBrush x:Key="Blue" Color="{StaticResource BlueColor}"/>
     <SolidColorBrush x:Key="Red" Color="{StaticResource RedColor}"/>
+    <SolidColorBrush x:Key="Purple" Color="{StaticResource PurpleColor}"/>
+    <SolidColorBrush x:Key="Yellow" Color="{StaticResource YellowColor}"/>
 
     <SolidColorBrush x:Key="Foreground" Color="{StaticResource DarkColor}"/>
     <SolidColorBrush x:Key="Background" Color="{StaticResource LightColor}"/>

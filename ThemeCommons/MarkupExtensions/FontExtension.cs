@@ -8,10 +8,10 @@ namespace ThemeCommons.MarkupExtensions
     public class FontExtension : MarkupExtension
     {
         public string FontFamily { get; set; }
-        private Lazy<FontFamily> _font;
+        private readonly Lazy<FontFamily> _font;
         public FontExtension()
         {
-            _font = new Lazy<FontFamily>(() => new FontFamily(new Uri($"pack://application:,,,/ThemeCommons;component/Assets/{FontFamily}/"), "./#FontFamily"));
+            _font = new Lazy<FontFamily>(() => new FontFamily(new Uri($"pack://application:,,,/ThemeCommons;component/Assets/{FontFamily}/"), $"./#{FontFamily}"));
         }
 
         public override object ProvideValue(IServiceProvider serviceProvider) => _font.Value;

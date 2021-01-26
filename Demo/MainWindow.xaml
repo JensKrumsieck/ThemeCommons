@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:controls="clr-namespace:ThemeCommons.Controls;assembly=ThemeCommons"
+        xmlns:extension="clr-namespace:ThemeCommons.MaterialDesign.Extension;assembly=ThemeCommons.MaterialDesign"
         mc:Ignorable="d"
-        TitlebarHeight="100"
-        ShowIcon="False"
+        TitlebarHeight="50"
         TitlebarBackground="{DynamicResource Dark}"
         x:Name="TheWindow"
         Title="MainWindow" Height="450" Width="800">
@@ -16,46 +16,59 @@
                 <ColumnDefinition Width="250"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Grid>
-                <Rectangle HorizontalAlignment="Left" Width="250" Fill="{StaticResource Blue}" 
-                           Height="{Binding RelativeSource={RelativeSource AncestorType=controls:Titlebar}, Path=Height}" Margin="-15, 0,0,0"/>
-                <Label Content="{Binding Title, ElementName=TheWindow}" Foreground="{DynamicResource Light}" VerticalAlignment="Center"/>
-            </Grid>
-            <ToolBarTray Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True">
-                <ToolBar Background="Transparent" VerticalAlignment="Center">
+            <Label Content="{Binding Title, ElementName=TheWindow}" Foreground="{DynamicResource Light}" VerticalAlignment="Center"/>
+                <ToolBarTray Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True" VerticalAlignment="Bottom" Margin="0,0,0,10">
+                <ToolBar Background="Transparent">
                     <Button>LOL</Button>
-                    <ToggleButton>El Toggle</ToggleButton>
+                    <ToggleButton/>
                     <TextBox Text="Type Me"/>
                 </ToolBar>
             </ToolBarTray>
         </Grid>
     </controls:DefaultWindow.TitlebarContent>
-   <Grid>
-       <Rectangle Width="250" Height="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=Height}"
-                  Fill="{DynamicResource Blue}" HorizontalAlignment="Left"/>
-       <UniformGrid Margin="8">
-           <UniformGrid>
-               <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB51;"/>
-               <Button Style="{StaticResource RoundedIconButton}" Content="&#xE106;"/>
-               <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB4C;"/>
-               <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB4E;"/>
-               <Button Style="{StaticResource RoundedIconButton}" Content="&#xE939;"/>
-               <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="False"/>
-               <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="True"/>
-               <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="True" Foreground="Red"/>
-               <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="False" Foreground="Red" Background="{DynamicResource Light}"/>
-           </UniformGrid>
-           <UniformGrid>
-               <Button Content="Hello"/>
-               <Button Content="Disabled" IsEnabled="False"/>
-               <Button Content="Accent" Style="{DynamicResource AccentButton}"/>
-               <ToggleButton Content="ToggleMe"/>
-           </UniformGrid>
-           <UniformGrid>
-               <TextBox Style="{StaticResource ColorPickerTextBox}"/>
-               <TextBox Text="Type Me"/>
-               <TextBox Text="Disabled" IsEnabled="False"/>
-           </UniformGrid>
+    <DockPanel>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBar Style="{DynamicResource MaterialDesignToolBar}">
+                <Button>LOL</Button>
+                <ToggleButton/>
+                <TextBox Text="Type Me"/>
+                <Button extension:ControlExtension.AttachedIcon="Folder" ToolTip="Open"/>
+                <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB51;"/>
+
+                <ListBox SelectedIndex="2" SelectionMode="Single">
+                    <ListBoxItem Style="{StaticResource ToolbarListItem}" extension:ControlExtension.AttachedIcon="MagnifyScan"/>
+                    <ListBoxItem Style="{StaticResource ToolbarListItem}" extension:ControlExtension.AttachedIcon="EyeDropperVariant"/>
+                    <ListBoxItem Style="{StaticResource ToolbarListItem}" extension:ControlExtension.AttachedIcon="FitToPageOutline" Content="Test"/>
+                    <ListBoxItem Style="{StaticResource ToolbarListItem}" Content="No Icon 🤔"/>
+                </ListBox>
+            </ToolBar>
+        </ToolBarTray>
+        <UniformGrid Margin="8">
+            <UniformGrid>
+                    <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB51;"/>
+                    <Button Style="{StaticResource RoundedIconButton}" Content="&#xE106;"/>
+                    <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB4C;"/>
+                    <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB4E;"/>
+                    <Button Style="{StaticResource RoundedIconButton}" Content="&#xE939;"/>
+                    <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="False"/>
+                    <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="True"/>
+                    <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="True" Foreground="Red"/>
+                    <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="False" Foreground="Red" Background="{DynamicResource Light}"/>
+            </UniformGrid>
+            <UniformGrid>
+                <Button Content="Hello"/>
+                <Button Content="Disabled" IsEnabled="False"/>
+                <Button Content="Accent" Style="{DynamicResource AccentButton}"/>
+                <Button Content="MaterialFlat" Style="{DynamicResource MaterialDesignFlatButton}"/>
+                <Button Content="Material Raised" Style="{DynamicResource MaterialDesignRaisedButton}"/>
+            </UniformGrid>
+            <UniformGrid>
+               <UniformGrid>
+                   <TextBox Style="{StaticResource ColorPickerTextBox}"/>
+                   <TextBox Text="Type Me"/>
+                   <TextBox Text="Disabled" IsEnabled="False"/>
+               </UniformGrid>
+            </UniformGrid>
        </UniformGrid>
-    </Grid>
+    </DockPanel>
 </controls:DefaultWindow>

@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/Colors.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ToolBar.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ToolBarTray.xaml" />
+        <!--overwrite variables-->
+        <ResourceDictionary>
+            <SolidColorBrush x:Key="MaterialDesignToolBarBackground" Color="{StaticResource DarkColor}"/>
+            <SolidColorBrush x:Key="MaterialDesignBody" Color="{StaticResource LightColor}"/>
+        </ResourceDictionary>
+        <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/ThemeCommons.xaml"/>
+        <!--Load Material additives-->
+        <ResourceDictionary Source="pack://application:,,,/ThemeCommons.MaterialDesign;component/Styles/Toolbar.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="{x:Type ToolBar}" BasedOn="{StaticResource MaterialDesignToolBar}"/>
+    <Style TargetType="{x:Type ToolBarTray}" BasedOn="{StaticResource MaterialDesignToolBarTray}">
+        <Setter Property="IsLocked" Value="True"/>
+    </Style>
+</ResourceDictionary>

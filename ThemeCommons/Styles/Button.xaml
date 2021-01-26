@@ -68,16 +68,6 @@
         <Setter Property="extension:ControlExtension.SpecialColor" Value="{DynamicResource LightColor}"/>
     </Style>
 
-    <Style TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource DefaultButton}" x:Key="DefaultToggleButton">
-        <Setter Property="extension:ControlExtension.SpecialColor" Value="{DynamicResource OrangeColor}"/>
-        <Style.Triggers>
-            <Trigger Property="IsChecked" Value="True">
-                <Setter Property="Background" Value="{DynamicResource Orange}"/>
-                <Setter Property="extension:ControlExtension.SpecialColor" Value="{DynamicResource LightColor}"/>
-            </Trigger>
-        </Style.Triggers>
-    </Style>
-
     <Style TargetType="{x:Type ButtonBase}" x:Key="RoundedIconButton">
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="VerticalAlignment" Value="Center"/>

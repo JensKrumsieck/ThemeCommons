@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThemeCommons", "ThemeCommons\ThemeCommons.csproj", "{1FDB4D23-8EDE-42DC-8D95-E715DF46DC4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "Demo\Demo.csproj", "{841D73A6-01BC-42A1-84AF-8CBB9C87D84B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Demo", "Demo\Demo.csproj", "{841D73A6-01BC-42A1-84AF-8CBB9C87D84B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThemeCommons.MaterialDesign", "ThemeCommons.MaterialDesign\ThemeCommons.MaterialDesign.csproj", "{96EF797F-0DC9-44AA-BCFA-651B01466942}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{841D73A6-01BC-42A1-84AF-8CBB9C87D84B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{841D73A6-01BC-42A1-84AF-8CBB9C87D84B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{841D73A6-01BC-42A1-84AF-8CBB9C87D84B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96EF797F-0DC9-44AA-BCFA-651B01466942}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96EF797F-0DC9-44AA-BCFA-651B01466942}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96EF797F-0DC9-44AA-BCFA-651B01466942}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96EF797F-0DC9-44AA-BCFA-651B01466942}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

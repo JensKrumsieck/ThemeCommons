@@ -8,7 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ThemeCommons\ThemeCommons.csproj" />
+    <ProjectReference Include="..\ThemeCommons.MaterialDesign\ThemeCommons.MaterialDesign.csproj" />
+    <PackageReference Include="MaterialDesignThemes" Version="3.2.0" />
   </ItemGroup>
 
 </Project>
