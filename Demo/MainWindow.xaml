@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:controls="clr-namespace:ThemeCommons.Controls;assembly=ThemeCommons"
         mc:Ignorable="d"
-        Background="{StaticResource Dark}"
+        Background="{StaticResource Gray}"
         x:Name="TheWindow"
         Title="MainWindow" Height="450" Width="800">
     <controls:DefaultWindow.TitlebarContent>
@@ -15,7 +15,7 @@
     </controls:DefaultWindow.TitlebarContent>
     <UniformGrid>
         <TextBox Style="{StaticResource ColorPickerTextBox}"/>
-        <UniformGrid Background="{DynamicResource Dark}">
+        <UniformGrid>
             <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB51;"/>
             <Button Style="{StaticResource RoundedIconButton}" Content="&#xE106;"/>
             <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB4C;"/>
@@ -25,6 +25,8 @@
             <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="True"/>
             <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="True" Foreground="Red"/>
             <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="True" Foreground="Red" Background="{DynamicResource Light}"/>
+            <Button Content="Hello"/>
+            <Button Content="Disabled" IsEnabled="False"/>
         </UniformGrid>
     </UniformGrid>
 </controls:DefaultWindow>

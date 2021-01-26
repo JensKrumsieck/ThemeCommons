@@ -1,8 +1,23 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <SolidColorBrush x:Key="Light">#eeeeee</SolidColorBrush>
-    <SolidColorBrush x:Key="Dark">#222831</SolidColorBrush>
-    <SolidColorBrush x:Key="DarkBlue">#2d4059</SolidColorBrush>
-    <SolidColorBrush x:Key="Orange">#ff5722</SolidColorBrush>
-    <SolidColorBrush x:Key="Green">#7bc74d</SolidColorBrush>
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:markupExtensions="clr-namespace:ThemeCommons.MarkupExtensions"
+                    xmlns:system="clr-namespace:System;assembly=System.Runtime">
+    <Color x:Key="LightColor">#eeeeee</Color>
+    <Color x:Key="DarkColor">#222831</Color>
+    <Color x:Key="GrayColor">#393e46</Color>
+    <Color x:Key="OrangeColor">#ff5722</Color>
+    <Color x:Key="GreenColor">#7bc74d</Color>
+    <Color x:Key="BlueColor">#0092ca</Color>
+
+    <SolidColorBrush x:Key="Light" Color="{StaticResource LightColor}"/>
+    <SolidColorBrush x:Key="Dark" Color="{StaticResource DarkColor}"/>
+    <SolidColorBrush x:Key="Gray" Color="{StaticResource GrayColor}"/>
+    <SolidColorBrush x:Key="Orange" Color="{StaticResource OrangeColor}"/>
+    <SolidColorBrush x:Key="Green" Color="{StaticResource GreenColor}"/>
+    <SolidColorBrush x:Key="Blue" Color="{StaticResource BlueColor}"/>
+
+    <SolidColorBrush x:Key="LightBorder" Color="{markupExtensions:Darken Source={StaticResource LightColor}, Amount=5}" Opacity=".5"/>
+
+    <system:Double x:Key="BorderRadius">5</system:Double>
+
 </ResourceDictionary>

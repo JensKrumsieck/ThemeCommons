@@ -2,13 +2,25 @@
 
 namespace ThemeCommons.Primitives
 {
-    public record HSVColor(double a, double h, double s, double v)
+    public struct HSVColor
     {
+        public double A { get;  }
+        public double H { get;  }
+        public double S { get;  }
+        public double V { get;  }
+
+        public HSVColor(double a, double h, double s, double v)
+        {
+            A = a;
+            H = h;
+            S = s;
+            V = v;
+        }
         /// <summary>
         /// Conversion with outside alpha parameter
         /// </summary>
         /// <param name="alpha"></param>
         /// <returns></returns>
-        public string ToHexString() => ColorUtil.ColorFromAHSV(a, h, s, v).ToString();
+        public string ToHexString() => ColorConverter.ColorFromAHSV(A, H, S, V).ToString();
     }
 }

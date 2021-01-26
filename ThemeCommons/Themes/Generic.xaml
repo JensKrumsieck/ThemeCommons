@@ -8,4 +8,5 @@
         <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/Window.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type controls:DefaultWindow}" BasedOn="{StaticResource DefaultWindow}"/>
+    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DefaultButton}"/>
 </ResourceDictionary>

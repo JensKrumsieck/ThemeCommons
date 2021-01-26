@@ -3,13 +3,14 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Media;
 using ThemeCommons.Extension;
+using ColorConverter = ThemeCommons.Extension.ColorConverter;
 using MediaColor = System.Windows.Media.Color;
 
 namespace ThemeCommons.Primitives
 {
     public class Color : INotifyPropertyChanged
     {
-        private HSVColor _hsvColor = ColorUtil.HSVColorFromARGB(0xFF, 0xFF, 0x00, 0x00);
+        private HSVColor _hsvColor = ColorConverter.HSVColorFromARGB(0xFF, 0xFF, 0x00, 0x00);
         public HSVColor HSVColor
         {
             get => _hsvColor;
@@ -31,10 +32,10 @@ namespace ThemeCommons.Primitives
         /// </summary>
         public double A
         {
-            get => HSVColor.a;
+            get => HSVColor.A;
             set
             {
-                HSVColor = new HSVColor(value, HSVColor.h, HSVColor.s, HSVColor.v);
+                HSVColor = new HSVColor(value, HSVColor.H, HSVColor.S, HSVColor.V);
                 OnPropertyChanged();
             }
         }
@@ -43,10 +44,10 @@ namespace ThemeCommons.Primitives
         /// </summary>
         public double H
         {
-            get => HSVColor.h;
+            get => HSVColor.H;
             set
             {
-                HSVColor = new HSVColor(HSVColor.a, value, HSVColor.s, HSVColor.v);
+                HSVColor = new HSVColor(HSVColor.A, value, HSVColor.S, HSVColor.V);
                 OnPropertyChanged();
             }
         }
@@ -55,10 +56,10 @@ namespace ThemeCommons.Primitives
         /// </summary>
         public double S
         {
-            get => HSVColor.s;
+            get => HSVColor.S;
             set
             {
-                HSVColor = new HSVColor(HSVColor.a, HSVColor.h, value, HSVColor.v);
+                HSVColor = new HSVColor(HSVColor.A, HSVColor.H, value, HSVColor.V);
                 OnPropertyChanged();
             }
         }
@@ -68,10 +69,10 @@ namespace ThemeCommons.Primitives
         /// </summary>
         public double V
         {
-            get => HSVColor.v;
+            get => HSVColor.V;
             set
             {
-                HSVColor = new HSVColor(HSVColor.a, HSVColor.h, HSVColor.s, value);
+                HSVColor = new HSVColor(HSVColor.A, HSVColor.H, HSVColor.S, value);
                 OnPropertyChanged();
             }
         }
@@ -86,7 +87,7 @@ namespace ThemeCommons.Primitives
         {
             get
             {
-                _hueBrush.Color = ColorUtil.ColorFromAHSV(1, H, 1, 1);
+                _hueBrush.Color = ColorConverter.ColorFromAHSV(1, H, 1, 1);
                 return _hueBrush;
             }
         }
@@ -101,9 +102,9 @@ namespace ThemeCommons.Primitives
             }
         }
 
-        public MediaColor SolidColor => ColorUtil.ColorFromAHSV(1, H, S, V);
+        public MediaColor SolidColor => ColorConverter.ColorFromAHSV(1, H, S, V);
 
-        public MediaColor TransparentColor => ColorUtil.ColorFromAHSV(0, H, S, V);
+        public MediaColor TransparentColor => ColorConverter.ColorFromAHSV(0, H, S, V);
 
         public event PropertyChangedEventHandler? PropertyChanged;
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

@@ -7,6 +7,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using ThemeCommons.Extension;
 using Color = System.Windows.Media.Color;
+using ColorConverter = System.Windows.Media.ColorConverter;
 using Point = System.Windows.Point;
 using ViewColor = ThemeCommons.Primitives.Color;
 
