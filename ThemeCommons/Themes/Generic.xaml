@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:controls="clr-namespace:ThemeCommons.Controls">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/Colors.xaml"/> <!--must be first item-->
-        <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/Variables.xaml"/> <!--must be second item-->
+        <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/Variables.xaml"/><!--must be second item-->
+        <!---Controls-->
         <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/Button.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/TextBox.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/Titlebar.xaml"/>

@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:controls="clr-namespace:ThemeCommons.Controls;assembly=ThemeCommons"
-        xmlns:extension="clr-namespace:ThemeCommons.Extension;assembly=ThemeCommons"
         mc:Ignorable="d"
         Background="{StaticResource Gray}"
         x:Name="TheWindow"
@@ -30,5 +29,6 @@
         <Button Content="Accent" Style="{DynamicResource AccentButton}"/>
         <ToggleButton Content="ToggleMe"/>
         <TextBox Text="Type Me"/>
+        <TextBox Text="Disabled" IsEnabled="False"/>
     </UniformGrid>
 </controls:DefaultWindow>
