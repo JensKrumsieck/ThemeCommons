@@ -5,7 +5,7 @@
         <Setter Property="Background" Value="{DynamicResource Dark}"/>
         <Setter Property="Foreground" Value="{DynamicResource Light}"/>
         <Setter Property="UseLayoutRounding" Value="True" />
-        <Setter Property="Border.CornerRadius" Value="{DynamicResource BorderRadius}"/>
+        <Setter Property="Border.CornerRadius" Value="{DynamicResource CornerRadius}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="FontSize" Value="14"/>
@@ -24,9 +24,9 @@
                         <Grid>
                             <Rectangle  x:Name="PART_Press" Visibility="Hidden" RadiusX="{DynamicResource BorderRadius}" RadiusY="{DynamicResource BorderRadius}">
                                 <Rectangle.Fill>
-                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                                         <GradientStop Color="Transparent" Offset="0" />
-                                        <GradientStop Color="{DynamicResource GreenColor}" Offset="{Binding ElementName=mouseTracker, Path=RelativeMousePosition.X}" />
+                                        <GradientStop Color="{DynamicResource BlueColor}" Offset="{Binding ElementName=mouseTracker, Path=RelativeMousePosition.X}" />
                                         <GradientStop Color="Transparent" Offset="1" />
                                     </LinearGradientBrush>
                                 </Rectangle.Fill>
@@ -54,6 +54,7 @@
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="PART_Hover" Property="BorderBrush" Value="Transparent"/>
                             <Setter TargetName="PART_Press" Property="Visibility" Value="Visible"/>
+                            <Setter Property="Opacity" Value="0.8"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

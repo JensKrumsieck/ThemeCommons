@@ -19,5 +19,7 @@
     <SolidColorBrush x:Key="LightBorder" Color="{markupExtensions:Darken Source={StaticResource LightColor}, Amount=5}" Opacity=".5"/>
 
     <system:Double x:Key="BorderRadius">5</system:Double>
+    <CornerRadius x:Key="CornerRadius" BottomLeft="{StaticResource BorderRadius}" BottomRight="{StaticResource BorderRadius}" 
+                  TopLeft="{StaticResource BorderRadius}" TopRight="{StaticResource BorderRadius}"/>
 
 </ResourceDictionary>
