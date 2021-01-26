@@ -56,6 +56,13 @@
         </Setter>
     </Style>
 
+    <Style x:Key="{x:Static ToolBar.SeparatorStyleKey}" TargetType="{x:Type Separator}">
+        <Setter Property="Background" Value="{DynamicResource MaterialDesignBody}"/>
+        <Setter Property="Opacity" Value=".15"/>
+        <Setter Property="Margin" Value="6"/>
+        <Setter Property="SnapsToDevicePixels" Value="true"/>
+    </Style>
+
     <Style x:Key="ToolbarListItem" TargetType="{x:Type ListBoxItem}" BasedOn="{StaticResource MaterialDesignToolToggleListBoxItem}">
         <Setter Property="materialDesign:RippleAssist.Feedback" Value="{DynamicResource MaterialDesignFlatButtonRipple}" />
         <Setter Property="HorizontalAlignment" Value="Left"/>

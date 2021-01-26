@@ -34,7 +34,7 @@
                 <TextBox Text="Type Me"/>
                 <Button extension:ControlExtension.AttachedIcon="Folder" ToolTip="Open"/>
                 <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB51;"/>
-
+                <Separator/>
                 <ListBox SelectedIndex="2" SelectionMode="Single">
                     <ListBoxItem Style="{StaticResource ToolbarListItem}" extension:ControlExtension.AttachedIcon="MagnifyScan"/>
                     <ListBoxItem Style="{StaticResource ToolbarListItem}" extension:ControlExtension.AttachedIcon="EyeDropperVariant"/>

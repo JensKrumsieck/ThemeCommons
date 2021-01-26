@@ -7,6 +7,7 @@
         <!---Controls-->
         <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/Button.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/TextBox.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/TabItem.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/Titlebar.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/Window.xaml"/>
     </ResourceDictionary.MergedDictionaries>
