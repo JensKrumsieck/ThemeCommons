@@ -9,4 +9,5 @@
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type controls:DefaultWindow}" BasedOn="{StaticResource DefaultWindow}"/>
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DefaultButton}"/>
+    <Style TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource DefaultToggleButton}"/>
 </ResourceDictionary>
