@@ -4,10 +4,10 @@ namespace ThemeCommons.Primitives
 {
     public struct HSVColor
     {
-        public double A { get;  }
-        public double H { get;  }
-        public double S { get;  }
-        public double V { get;  }
+        public double A { get; }
+        public double H { get; }
+        public double S { get; }
+        public double V { get; }
 
         public HSVColor(double a, double h, double s, double v)
         {

@@ -10,6 +10,6 @@
         /// <param name="max"></param>
         /// <returns></returns>
         public static double Clamp(double input, double min, double max) =>
-            input < min ? input = min : input > max ? max : input;
+            input < min ? min : input > max ? max : input;
     }
 }

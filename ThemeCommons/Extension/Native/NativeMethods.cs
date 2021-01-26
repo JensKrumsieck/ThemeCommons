@@ -41,7 +41,7 @@ namespace ThemeCommons.Extension.Native
         /// <param name="lParam"></param>
         public static void WMGetMinMaxInfo(IntPtr hwnd, IntPtr lParam)
         {
-            var mmi = (MINMAXINFO) Marshal.PtrToStructure(lParam, typeof(MINMAXINFO));
+            var mmi = (MINMAXINFO)Marshal.PtrToStructure(lParam, typeof(MINMAXINFO));
             const int MONITOR_DEFAULTTONEAREST = 0x00000002;
             var monitor = MonitorFromWindow(hwnd, MONITOR_DEFAULTTONEAREST);
 
