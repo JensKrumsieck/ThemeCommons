@@ -5,6 +5,7 @@
     <Style TargetType="{x:Type TextBox}" x:Key="ColorPickerTextBox">
         <Setter Property="Height" Value="32"/>
         <Setter Property="Width" Value="120"/>
+        <Setter Property="Border.CornerRadius" Value="{DynamicResource CornerRadius}"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Padding" Value="0"></Setter>
         <Setter Property="FontWeight" Value="SemiBold"/>
@@ -13,6 +14,7 @@
                 <ControlTemplate TargetType="{x:Type TextBox}">
                     <Grid Width="{TemplateBinding Width}"  Height="{TemplateBinding Height}">
                         <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" 
+                                CornerRadius="{TemplateBinding Border.CornerRadius}"
                                             BorderThickness="{TemplateBinding BorderThickness}" x:Name="PART_OuterBorder">
                             <StackPanel Orientation="Horizontal" Margin="2.5">
                                 <Border Width="{TemplateBinding Height, Converter={converter:AddValueConverter}, ConverterParameter=-5}" Height="{TemplateBinding Height, Converter={converter:AddValueConverter}, ConverterParameter=-5}" 

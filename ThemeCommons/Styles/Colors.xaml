@@ -1,7 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:markupExtensions="clr-namespace:ThemeCommons.MarkupExtensions"
-                    xmlns:system="clr-namespace:System;assembly=System.Runtime">
+                    xmlns:markupExtensions="clr-namespace:ThemeCommons.MarkupExtensions">
     <Color x:Key="LightColor">#eeeeee</Color>
     <Color x:Key="DarkColor">#222831</Color>
     <Color x:Key="GrayColor">#393e46</Color>
@@ -17,9 +16,4 @@
     <SolidColorBrush x:Key="Blue" Color="{StaticResource BlueColor}"/>
 
     <SolidColorBrush x:Key="LightBorder" Color="{markupExtensions:Darken Source={StaticResource LightColor}, Amount=5}" Opacity=".5"/>
-
-    <system:Double x:Key="BorderRadius">5</system:Double>
-    <CornerRadius x:Key="CornerRadius" BottomLeft="{StaticResource BorderRadius}" BottomRight="{StaticResource BorderRadius}" 
-                  TopLeft="{StaticResource BorderRadius}" TopRight="{StaticResource BorderRadius}"/>
-
 </ResourceDictionary>
