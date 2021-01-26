@@ -7,10 +7,14 @@
         <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/Button.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/TextBox.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/Titlebar.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/ToolBar.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/ToolBarTray.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/Window.xaml"/>
     </ResourceDictionary.MergedDictionaries>
     <Style TargetType="{x:Type controls:DefaultWindow}" BasedOn="{StaticResource DefaultWindow}"/>
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DefaultButton}"/>
     <Style TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource DefaultToggleButton}"/>
     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource DefaultTextBox}"/>
+    <Style TargetType="{x:Type ToolBarTray}" BasedOn="{StaticResource DefaultToolBarTray}"/>
+    <Style TargetType="{x:Type ToolBar}" BasedOn="{StaticResource DefaultToolBar}"/>
 </ResourceDictionary>

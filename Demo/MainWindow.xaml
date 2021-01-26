@@ -5,30 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:controls="clr-namespace:ThemeCommons.Controls;assembly=ThemeCommons"
         mc:Ignorable="d"
-        Background="{StaticResource Gray}"
+        TitlebarHeight="100"
+        ShowIcon="False"
+        TitlebarBackground="{DynamicResource Dark}"
         x:Name="TheWindow"
         Title="MainWindow" Height="450" Width="800">
     <controls:DefaultWindow.TitlebarContent>
         <Grid VerticalAlignment="Center">
-            <Label Content="{Binding Title, ElementName=TheWindow}" FontSize="16" Foreground="{DynamicResource Light}" FontWeight="SemiBold"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid>
+                <Rectangle HorizontalAlignment="Left" Width="250" Fill="{StaticResource Blue}" 
+                           Height="{Binding RelativeSource={RelativeSource AncestorType=controls:Titlebar}, Path=Height}" Margin="-15, 0,0,0"/>
+                <Label Content="{Binding Title, ElementName=TheWindow}" Foreground="{DynamicResource Light}" VerticalAlignment="Center"/>
+            </Grid>
+            <ToolBarTray Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True">
+                <ToolBar Background="Transparent" VerticalAlignment="Center">
+                    <Button>LOL</Button>
+                    <ToggleButton>El Toggle</ToggleButton>
+                    <TextBox Text="Type Me"/>
+                </ToolBar>
+            </ToolBarTray>
         </Grid>
     </controls:DefaultWindow.TitlebarContent>
-    <UniformGrid>
-        <TextBox Style="{StaticResource ColorPickerTextBox}"/>
-        <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB51;"/>
-        <Button Style="{StaticResource RoundedIconButton}" Content="&#xE106;"/>
-        <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB4C;"/>
-        <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB4E;"/>
-        <Button Style="{StaticResource RoundedIconButton}" Content="&#xE939;"/>
-        <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="False"/>
-        <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="True"/>
-        <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="True" Foreground="Red"/>
-        <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="True" Foreground="Red" Background="{DynamicResource Light}"/>
-        <Button Content="Hello"/>
-        <Button Content="Disabled" IsEnabled="False"/>
-        <Button Content="Accent" Style="{DynamicResource AccentButton}"/>
-        <ToggleButton Content="ToggleMe"/>
-        <TextBox Text="Type Me"/>
-        <TextBox Text="Disabled" IsEnabled="False"/>
-    </UniformGrid>
+   <Grid>
+       <Rectangle Width="250" Height="{Binding RelativeSource={RelativeSource AncestorType=Window}, Path=Height}"
+                  Fill="{DynamicResource Blue}" HorizontalAlignment="Left"/>
+       <UniformGrid Margin="8">
+           <UniformGrid>
+               <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB51;"/>
+               <Button Style="{StaticResource RoundedIconButton}" Content="&#xE106;"/>
+               <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB4C;"/>
+               <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB4E;"/>
+               <Button Style="{StaticResource RoundedIconButton}" Content="&#xE939;"/>
+               <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="False"/>
+               <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="True"/>
+               <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="True" Foreground="Red"/>
+               <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="False" Foreground="Red" Background="{DynamicResource Light}"/>
+           </UniformGrid>
+           <UniformGrid>
+               <Button Content="Hello"/>
+               <Button Content="Disabled" IsEnabled="False"/>
+               <Button Content="Accent" Style="{DynamicResource AccentButton}"/>
+               <ToggleButton Content="ToggleMe"/>
+           </UniformGrid>
+           <UniformGrid>
+               <TextBox Style="{StaticResource ColorPickerTextBox}"/>
+               <TextBox Text="Type Me"/>
+               <TextBox Text="Disabled" IsEnabled="False"/>
+           </UniformGrid>
+       </UniformGrid>
+    </Grid>
 </controls:DefaultWindow>

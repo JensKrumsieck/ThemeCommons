@@ -7,6 +7,7 @@
     <Color x:Key="OrangeColor">#ff5722</Color>
     <Color x:Key="GreenColor">#7bc74d</Color>
     <Color x:Key="BlueColor">#0092ca</Color>
+    <Color x:Key="RedColor">#bd2c00</Color>
 
     <SolidColorBrush x:Key="Light" Color="{StaticResource LightColor}"/>
     <SolidColorBrush x:Key="Dark" Color="{StaticResource DarkColor}"/>
@@ -14,6 +15,11 @@
     <SolidColorBrush x:Key="Orange" Color="{StaticResource OrangeColor}"/>
     <SolidColorBrush x:Key="Green" Color="{StaticResource GreenColor}"/>
     <SolidColorBrush x:Key="Blue" Color="{StaticResource BlueColor}"/>
+    <SolidColorBrush x:Key="Red" Color="{StaticResource RedColor}"/>
+
+    <SolidColorBrush x:Key="Foreground" Color="{StaticResource DarkColor}"/>
+    <SolidColorBrush x:Key="Background" Color="{StaticResource LightColor}"/>
 
     <SolidColorBrush x:Key="LightBorder" Color="{markupExtensions:Darken Source={StaticResource LightColor}, Amount=5}" Opacity=".5"/>
+    <SolidColorBrush x:Key="BlueBorder" Color="{markupExtensions:Lighten Source={StaticResource BlueColor}, Amount=5}" Opacity=".25"/>
 </ResourceDictionary>

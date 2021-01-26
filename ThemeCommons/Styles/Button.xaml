@@ -3,14 +3,12 @@
                     xmlns:controls="clr-namespace:ThemeCommons.Controls"
                     xmlns:extension="clr-namespace:ThemeCommons.Extension">
     <Style TargetType="{x:Type ButtonBase}" x:Key="DefaultButton">
-        <Setter Property="Background" Value="{DynamicResource Dark}"/>
-        <Setter Property="Foreground" Value="{DynamicResource Light}"/>
+        <Setter Property="Background" Value="{DynamicResource Background}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Foreground}"/>
         <Setter Property="extension:ControlExtension.SpecialColor" Value="{DynamicResource BlueColor}"></Setter>
         <Setter Property="UseLayoutRounding" Value="True" />
         <Setter Property="Border.CornerRadius" Value="{DynamicResource CornerRadius}"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="FontWeight" Value="SemiBold"/>
-        <Setter Property="FontSize" Value="14"/>
         <Setter Property="BorderBrush" Value="{DynamicResource LightBorder}"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -84,8 +82,8 @@
         <Setter Property="FontSize" Value="12"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="Background" Value="{DynamicResource Green}"/>
-        <Setter Property="Foreground" Value="{DynamicResource Light}"/>
+        <Setter Property="Background" Value="{DynamicResource Background}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Foreground}"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="Width" Value="24"/>
         <Setter Property="Height" Value="24"/>

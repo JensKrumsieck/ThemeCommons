@@ -4,13 +4,12 @@
                     xmlns:controls="clr-namespace:ThemeCommons.Controls"
                     xmlns:extension="clr-namespace:ThemeCommons.Extension">
     <Style TargetType="{x:Type TextBox}" x:Key="DefaultTextBox">
-        <Setter Property="Background" Value="{DynamicResource Gray}"/>
-        <Setter Property="Height" Value="32"/>
-        <Setter Property="Foreground" Value="{DynamicResource Light}"/>
+        <Setter Property="Background" Value="{DynamicResource Background}"/>
+        <Setter Property="Height" Value="34"/>
+        <Setter Property="Foreground" Value="{DynamicResource Foreground}"/>
         <Setter Property="Border.CornerRadius" Value="{DynamicResource CornerRadius}"/>
-        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource BlueBorder}"/>
         <Setter Property="Padding" Value="0"/>
-        <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="extension:ControlExtension.SpecialBrush" Value="{DynamicResource Blue}"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="Template">
