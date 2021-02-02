@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <PackageId>JensKrumsieck.ThemeCommons.MAeaterialDesign</PackageId>
+    <PackageId>JensKrumsieck.ThemeCommons.MaterialDesign</PackageId>
     <Authors>Jens Krumsieck</Authors>
     <TargetFramework>net5.0-windows</TargetFramework>
     <LangVersion>9.0</LangVersion>
