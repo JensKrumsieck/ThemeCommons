@@ -19,11 +19,11 @@
                             CornerRadius="{TemplateBinding Border.CornerRadius}"
                             BorderThickness="{TemplateBinding BorderThickness}" x:Name="PART_OuterBorder">
                         <AdornerDecorator Margin="2.5">
-                            <TextBox Style="{x:Null}" Text="{TemplateBinding Text}" Background="{TemplateBinding Background}"
-                                     FontSize="{TemplateBinding FontSize}" FontWeight="{TemplateBinding FontWeight}"
-                                     VerticalContentAlignment="{TemplateBinding VerticalAlignment}" BorderThickness="0" 
-                                     x:Name="PART_Box" HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
-                                     Foreground="{TemplateBinding Foreground}"/>
+                            <ScrollViewer Margin="0"
+                                          x:Name="PART_ContentHost" TextElement.FontSize="{TemplateBinding FontSize}" 
+                                          VerticalAlignment="Center" VerticalContentAlignment="Center" Background="{TemplateBinding Background}"
+                                          Foreground="{TemplateBinding Foreground}"
+                                          TextElement.FontWeight="{TemplateBinding FontWeight}"/>
                         </AdornerDecorator>
                     </Border>
                     <ControlTemplate.Triggers>
@@ -36,11 +36,11 @@
         </Setter>
     </Style>
 
-    <Style TargetType="{x:Type TextBox}" x:Key="ColorPickerTextBox" BasedOn="{StaticResource ThemeCommonsDefaultTextBox}">
+    <Style TargetType="{x:Type controls:ColorPickerTextBox}" x:Key="ColorPickerTextBox" BasedOn="{StaticResource ThemeCommonsDefaultTextBox}">
         <Setter Property="Width" Value="120"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type TextBox}">
+                <ControlTemplate TargetType="{x:Type controls:ColorPickerTextBox}">
                     <Grid Width="{TemplateBinding Width}"  Height="{TemplateBinding Height}">
                         <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" 
                                 CornerRadius="{TemplateBinding Border.CornerRadius}"
@@ -48,13 +48,14 @@
                             <StackPanel Orientation="Horizontal" Margin="2.5">
                                 <Border Width="{TemplateBinding Height, Converter={converter:AddValueConverter}, ConverterParameter=-5}" Height="{TemplateBinding Height, Converter={converter:AddValueConverter}, ConverterParameter=-5}" 
                                                     Background="{Binding ElementName=ColorPicker, Path=SelectedBrush}" CornerRadius="5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                                <TextBox Style="{x:Null}" Background="{TemplateBinding Background}" Text="{Binding ElementName=ColorPicker, Path=SelectedHexString}"
-                                                     FontSize="{TemplateBinding FontSize}" FontWeight="{TemplateBinding FontWeight}"
-                                                     VerticalContentAlignment="Center" BorderThickness="0" x:Name="PART_Box" 
-                                                     HorizontalAlignment="Right" Foreground="{TemplateBinding Foreground}"/>
+                                <ScrollViewer Margin="0"
+                                    x:Name="PART_ContentHost" TextElement.FontSize="{TemplateBinding FontSize}" 
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Right" 
+                                    TextElement.FontWeight="{TemplateBinding FontWeight}"/>
                             </StackPanel>
                         </Border>
-                        <Popup x:Name="PART_Popup" PlacementTarget="{Binding ElementName=PART_Box}" PopupAnimation="Fade" Width="300">
+                        <Popup x:Name="PART_Popup" PlacementTarget="{Binding ElementName=PART_ContentHost}" PopupAnimation="Fade" Width="300">
                             <Border Background="{TemplateBinding Background}">
                                 <controls:ColorPicker x:Name="ColorPicker" SelectedHexString="#ccc" Foreground="{TemplateBinding Foreground}" FontSize="12" FontWeight="Regular"/>
                             </Border>

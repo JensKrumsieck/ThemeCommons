@@ -15,4 +15,5 @@
     <Style TargetType="{x:Type controls:DefaultWindow}" BasedOn="{StaticResource DefaultWindow}"/>
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DefaultButton}"/>
     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource ThemeCommonsDefaultTextBox}"/>
+    <Style TargetType="{x:Type controls:ColorPickerTextBox}" BasedOn="{StaticResource ColorPickerTextBox}"/>
 </ResourceDictionary>

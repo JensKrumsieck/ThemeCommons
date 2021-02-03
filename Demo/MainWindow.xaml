@@ -64,7 +64,7 @@
             </UniformGrid>
             <UniformGrid>
                <UniformGrid>
-                   <TextBox Style="{StaticResource ColorPickerTextBox}"/>
+                   <controls:ColorPickerTextBox/>
                    <TextBox Text="Type Me"/>
                    <TextBox Text="Disabled" IsEnabled="False"/>
                </UniformGrid>

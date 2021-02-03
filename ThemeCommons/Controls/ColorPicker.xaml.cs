@@ -175,6 +175,7 @@ namespace ThemeCommons.Controls
             var hsv = color.ToHSVColor();
             _selectedColor.HSVColor = hsv;
             UpdatePositions();
+            OnColorSelected();
         }
 
         #region Circle Canvas Events
@@ -242,6 +243,7 @@ namespace ThemeCommons.Controls
         }
         #endregion
 
+        #region ColorPicker Events
         private void ColorPicker_OnLoaded(object sender, RoutedEventArgs e)
         {
             _selectedColor.PropertyChanged += (s, args) =>
@@ -253,6 +255,12 @@ namespace ThemeCommons.Controls
             if (string.IsNullOrEmpty(HexTextBox.Text)) HexTextBox.Text = "ff0000";
             UpdateColor(HexTextBox.Text);
         }
+
+        public event EventHandler ColorSelected;
+
+        protected virtual void OnColorSelected() => ColorSelected?.Invoke(this, EventArgs.Empty);
+
+        #endregion
 
         #region ASlider Events
         private void ACanvas_OnMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -277,5 +285,7 @@ namespace ThemeCommons.Controls
         private void ACanvas_OnSizeChanged(object sender, SizeChangedEventArgs e) => UpdateASliderSelectorPosition();
 
         #endregion
+
+       
     }
 }
