@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:controls="clr-namespace:ThemeCommons.Controls;assembly=ThemeCommons"
         xmlns:extension="clr-namespace:ThemeCommons.MaterialDesign.Extension;assembly=ThemeCommons.MaterialDesign"
+        xmlns:extension1="clr-namespace:ThemeCommons.Extension;assembly=ThemeCommons"
         mc:Ignorable="d"
         TitlebarHeight="50"
         TitlebarBackground="{DynamicResource Dark}"
@@ -39,6 +40,7 @@
                     <ListBoxItem Style="{StaticResource ToolbarListItem}" extension:ControlExtension.AttachedIcon="MagnifyScan"/>
                     <ListBoxItem Style="{StaticResource ToolbarListItem}" extension:ControlExtension.AttachedIcon="EyeDropperVariant"/>
                     <ListBoxItem Style="{StaticResource ToolbarListItem}" extension:ControlExtension.AttachedIcon="FitToPageOutline" Content="Test"/>
+                    <ListBoxItem Style="{StaticResource ToolbarListItem}" extension:ControlExtension.AttachedIcon="Love" Content="Test" FontSize="9" extension1:ControlExtension.StackPanelOrientation="Vertical"/>
                     <ListBoxItem Style="{StaticResource ToolbarListItem}" Content="No Icon 🤔"/>
                 </ListBox>
             </ToolBar>

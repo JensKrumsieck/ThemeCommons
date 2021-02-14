@@ -1,7 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-                    xmlns:extension="clr-namespace:ThemeCommons.MaterialDesign.Extension">
+                    xmlns:extension="clr-namespace:ThemeCommons.MaterialDesign.Extension"
+                    xmlns:extension1="clr-namespace:ThemeCommons.Extension;assembly=ThemeCommons">
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/TextBox.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.ListBox.xaml" />
@@ -19,6 +20,7 @@
         <Setter Property="Margin" Value="0"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Foreground" Value="{DynamicResource MaterialDesignBody}"/>
+        <Setter Property="FontSize" Value="12"/>
         <Setter Property="materialDesign:RippleAssist.Feedback" Value="{DynamicResource MaterialDesignFlatButtonRipple}" />
         <Setter Property="Template">
             <Setter.Value>
@@ -30,10 +32,11 @@
                                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                     Padding="{TemplateBinding Padding}" ToolTip="{TemplateBinding Content}"
                                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Background="Transparent">
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <StackPanel Orientation="{TemplateBinding extension1:ControlExtension.StackPanelOrientation}" HorizontalAlignment="Center">
                                 <materialDesign:PackIcon x:Name="PART_ICON" Kind="{TemplateBinding extension:ControlExtension.AttachedIcon}" Foreground="{TemplateBinding Foreground}"
                                 Visibility="Visible"/>
-                                <Label x:Name="PART_CTN" Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" Visibility="Visible"/>
+                                <Label x:Name="PART_CTN" Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}" Visibility="Visible" FontSize="{TemplateBinding FontSize}"
+                                       FontFamily="{TemplateBinding FontFamily}" FontStyle="{TemplateBinding FontStyle}" FontWeight="{TemplateBinding FontWeight}"/>
                             </StackPanel>
                         </materialDesign:Ripple>
                     </Border>
@@ -79,7 +82,7 @@
                                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                     Padding="{TemplateBinding Padding}" ToolTip="{TemplateBinding Content}"
                                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" Background="Transparent">
-                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="{TemplateBinding extension1:ControlExtension.StackPanelOrientation}">
                                 <materialDesign:PackIcon x:Name="PART_ICON" Kind="{TemplateBinding extension:ControlExtension.AttachedIcon}" Foreground="{TemplateBinding Foreground}"/>
                                 <Label x:Name="PART_CTN" Content="{TemplateBinding Content}" Foreground="{TemplateBinding Foreground}"/>
                             </StackPanel>

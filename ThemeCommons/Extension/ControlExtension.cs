@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 
 namespace ThemeCommons.Extension
@@ -25,5 +26,15 @@ namespace ThemeCommons.Extension
             obj.SetValue(SpecialBrushProperty, value);
         public static SolidColorBrush GetSpecialBrush(DependencyObject obj) =>
             (SolidColorBrush)obj.GetValue(SpecialBrushProperty);
+
+        /// <summary>
+        /// Attached Stackpanel Orientaton
+        /// </summary>
+        public static readonly DependencyProperty StackPanelOrientationProperty =
+            DependencyProperty.RegisterAttached("StackPanelOrientation", typeof(Orientation), typeof(ControlExtension), new FrameworkPropertyMetadata(Orientation.Horizontal));
+        public static void SetStackPanelOrientation(DependencyObject obj, Orientation value) =>
+            obj.SetValue(StackPanelOrientationProperty, value);
+        public static Orientation StackPanelOrientation(DependencyObject obj) =>
+            (Orientation)obj.GetValue(StackPanelOrientationProperty);
     }
 }
