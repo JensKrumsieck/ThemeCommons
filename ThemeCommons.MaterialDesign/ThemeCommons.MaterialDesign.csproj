@@ -6,7 +6,7 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <LangVersion>9.0</LangVersion>
     <UseWPF>true</UseWPF>
-    <Version>1.0.0-alpha20210203</Version>
+    <Version>1.0.0-beta1</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/JensKrumsieck/ThemeCommons</PackageProjectUrl>
     <RepositoryUrl>https://github.com/JensKrumsieck/ThemeCommons</RepositoryUrl>
