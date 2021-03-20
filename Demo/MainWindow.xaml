@@ -10,12 +10,12 @@
         TitlebarHeight="50"
         TitlebarBackground="{DynamicResource Dark}"
         x:Name="TheWindow"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" MinWidth="700">
     <controls:DefaultWindow.TitlebarContent>
         <Grid VerticalAlignment="Center">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <Label Content="{Binding Title, ElementName=TheWindow}" Foreground="{DynamicResource Light}" VerticalAlignment="Center"/>
                 <ToolBarTray Grid.Column="1" WindowChrome.IsHitTestVisibleInChrome="True" VerticalAlignment="Bottom" Margin="0,0,0,10">
