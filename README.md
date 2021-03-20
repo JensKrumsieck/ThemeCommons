@@ -1,6 +1,9 @@
 # ThemeCommons
 Some of my commonly used WPF Styles with MaterialDesignInXamlToolkit couplings.
 
+[![.NET](https://github.com/JensKrumsieck/ThemeCommons/actions/workflows/dotnet.yml/badge.svg)](https://github.com/JensKrumsieck/ThemeCommons/actions/workflows/dotnet.yml)
+[![Nuget (with prereleases)](https://img.shields.io/nuget/vpre/JensKrumsieck.ThemeCommons)](https://www.nuget.org/packages/JensKrumsieck.ThemeCommons/)
+
 ### Used Libraries
 * [MaterialDesign in XAML](https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit) (MIT License)
 
