@@ -1,4 +1,5 @@
-﻿using ThemeCommons.Controls;
+﻿using System.Windows;
+using ThemeCommons.Controls;
 
 namespace Demo
 {
@@ -11,5 +12,9 @@ namespace Demo
         {
             InitializeComponent();
         }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e) => OpenMe.Visibility = (OpenMe.Visibility == Visibility.Collapsed
+            ? Visibility.Visible
+            : Visibility.Collapsed);
     }
 }

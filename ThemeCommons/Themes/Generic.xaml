@@ -8,6 +8,7 @@
         <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/Button.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/TextBox.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/TabItem.xaml"/>
+        <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/Popup.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/Titlebar.xaml"/>
         <ResourceDictionary Source="pack://application:,,,/ThemeCommons;component/Styles/Window.xaml"/>
     </ResourceDictionary.MergedDictionaries>
@@ -16,4 +17,5 @@
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource DefaultButton}"/>
     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource ThemeCommonsDefaultTextBox}"/>
     <Style TargetType="{x:Type controls:ColorPickerTextBox}" BasedOn="{StaticResource ColorPickerTextBox}"/>
+    <Style TargetType="{x:Type controls:Popup}" BasedOn="{StaticResource PopupDefaultStyle}"/>
 </ResourceDictionary>

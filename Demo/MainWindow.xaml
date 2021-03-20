@@ -27,7 +27,14 @@
             </ToolBarTray>
         </Grid>
     </controls:DefaultWindow.TitlebarContent>
-    <DockPanel>
+    <Grid>
+        <controls:Popup Header="This is a Test" Visibility="Collapsed" x:Name="OpenMe">
+            <StackPanel>
+                <Rectangle Width="100" Height="100" Fill="Red"/>
+                <Button Content="Kick Me!" Margin="0 10" Click="ButtonBase_OnClick"/>
+            </StackPanel>
+        </controls:Popup>
+        <DockPanel>
         <ToolBarTray DockPanel.Dock="Top">
             <ToolBar Style="{DynamicResource MaterialDesignToolBar}">
                 <Button>LOL</Button>
@@ -58,7 +65,7 @@
                     <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="False" Foreground="Red" Background="{DynamicResource Light}"/>
             </UniformGrid>
             <UniformGrid>
-                <Button Content="Hello"/>
+                <Button Content="Hello" Click="ButtonBase_OnClick"/>
                 <Button Content="Disabled" IsEnabled="False"/>
                 <Button Content="Accent" Style="{DynamicResource AccentButton}"/>
                 <Button Content="MaterialFlat" Style="{DynamicResource MaterialDesignFlatButton}"/>
@@ -72,5 +79,6 @@
                </UniformGrid>
             </UniformGrid>
        </UniformGrid>
-    </DockPanel>
+        </DockPanel>
+    </Grid>
 </controls:DefaultWindow>
