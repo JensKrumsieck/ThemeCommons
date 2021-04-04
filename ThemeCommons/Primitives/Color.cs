@@ -107,7 +107,7 @@ namespace ThemeCommons.Primitives
         public MediaColor TransparentColor => ColorConverter.ColorFromAHSV(0, H, S, V);
 
         public event PropertyChangedEventHandler? PropertyChanged;
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null!) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }
 #nullable restore

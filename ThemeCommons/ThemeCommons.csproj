@@ -5,34 +5,13 @@
     <TargetFramework>net5.0-windows</TargetFramework>
     <LangVersion>9.0</LangVersion>
     <UseWPF>true</UseWPF>
-    <Version>1.0.0-beta4</Version>
+    <Version>1.0.0-rc1</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/JensKrumsieck/ThemeCommons</PackageProjectUrl>
     <RepositoryUrl>https://github.com/JensKrumsieck/ThemeCommons</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
-  <ItemGroup>
-    <None Remove="Assets\Montserrat\Montserrat-Black.ttf" />
-    <None Remove="Assets\Montserrat\Montserrat-BlackItalic.ttf" />
-    <None Remove="Assets\Montserrat\Montserrat-Bold.ttf" />
-    <None Remove="Assets\Montserrat\Montserrat-BoldItalic.ttf" />
-    <None Remove="Assets\Montserrat\Montserrat-ExtraBold.ttf" />
-    <None Remove="Assets\Montserrat\Montserrat-ExtraBoldItalic.ttf" />
-    <None Remove="Assets\Montserrat\Montserrat-ExtraLight.ttf" />
-    <None Remove="Assets\Montserrat\Montserrat-ExtraLightItalic.ttf" />
-    <None Remove="Assets\Montserrat\Montserrat-Italic.ttf" />
-    <None Remove="Assets\Montserrat\Montserrat-Light.ttf" />
-    <None Remove="Assets\Montserrat\Montserrat-LightItalic.ttf" />
-    <None Remove="Assets\Montserrat\Montserrat-Medium.ttf" />
-    <None Remove="Assets\Montserrat\Montserrat-MediumItalic.ttf" />
-    <None Remove="Assets\Montserrat\Montserrat-Regular.ttf" />
-    <None Remove="Assets\Montserrat\Montserrat-SemiBold.ttf" />
-    <None Remove="Assets\Montserrat\Montserrat-SemiBoldItalic.ttf" />
-    <None Remove="Assets\Montserrat\Montserrat-Thin.ttf" />
-    <None Remove="Assets\Montserrat\Montserrat-ThinItalic.ttf" />
-    <None Remove="Assets\noise.png" />
-  </ItemGroup>
   <ItemGroup>
     <Resource Include="Assets\Montserrat\Montserrat-Black.ttf" />
     <Resource Include="Assets\Montserrat\Montserrat-BlackItalic.ttf" />

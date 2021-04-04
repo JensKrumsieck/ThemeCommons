@@ -23,7 +23,7 @@ namespace ThemeCommons.Extension.Native
         private static extern IntPtr MonitorFromWindow(IntPtr handle, int flags);
 
         [DllImport("user32.dll")]
-        public static extern bool SetForegroundWindow(IntPtr hWnd);
+        private static extern bool SetForegroundWindow(IntPtr hWnd);
 
         [DllImport("user32.dll", EntryPoint = "SendMessage")]
         private static extern int SendMessage(IntPtr hWnd, int Msg, IntPtr wParam, ref COPYDATASTRUCT lParam);
@@ -119,7 +119,7 @@ namespace ThemeCommons.Extension.Native
                 SizeOfData = accentStructSize,
                 Data = accentPtr
             };
-            SetWindowCompositionAttribute(handle, ref data);
+            _ = SetWindowCompositionAttribute(handle, ref data);
 
             Marshal.FreeHGlobal(accentPtr);
         }

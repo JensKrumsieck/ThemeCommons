@@ -89,9 +89,9 @@ namespace ThemeCommons.Controls
 
         private void UpdateCircleSelectorPosition(double hue)
         {
-            var radian = (hue - 180 + 270) * Math.PI / 180;
             if (hue < 0) hue += 360;
             if (hue > 360) hue -= 360;
+            var radian = (hue - 180 + 270) * Math.PI / 180;
             SetCircleSelectorPosition(radian);
         }
 
@@ -150,7 +150,6 @@ namespace ThemeCommons.Controls
         {
             //_selectedColor has Updated
             UpdateCircleSelectorPosition(_selectedColor.H);
-
             var p = new Point(_selectedColor.S, 1 - _selectedColor.V);
 
             _selectedColorShadingPosition = p;
