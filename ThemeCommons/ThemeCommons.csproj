@@ -2,7 +2,7 @@
   <PropertyGroup>
     <PackageId>JensKrumsieck.ThemeCommons</PackageId>
     <Authors>Jens Krumsieck</Authors>
-    <TargetFramework>net6.0-windows</TargetFramework>
+    <TargetFrameworks>net6.0-windows;net5.0-windows</TargetFrameworks>
     <LangVersion>latest</LangVersion>
     <UseWPF>true</UseWPF>
     <Version>1.0.0</Version>
