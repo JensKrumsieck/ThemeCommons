@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 using System.Windows;
-using System.Windows.Interop;
 using System.Windows.Media;
-using ThemeCommons.Extension.Native;
 
 namespace ThemeCommons.Controls
 {
@@ -51,45 +48,14 @@ namespace ThemeCommons.Controls
 
         public DefaultWindow()
         {
-            SourceInitialized += Window_SourceInitialized;
+            StateChanged += MaximizeFix;
         }
 
-        private void Window_SourceInitialized(object sender, EventArgs e)
+        private void MaximizeFix(object sender, EventArgs e)
         {
-            var handle = new WindowInteropHelper(this).Handle;
-            var handleSource = HwndSource.FromHwnd(handle);
-            handleSource?.AddHook(WindowProc);
-            NativeMethods.EnableBlur(handle);
-        }
-
-        private IntPtr WindowProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
-        {
-            switch (msg)
-            {
-                case 0x0024:
-                    NativeMethods.WMGetMinMaxInfo(hwnd, lParam);
-                    handled = true;
-                    break;
-                case 0x0046:
-                    var pos = (WINDOWPOS)Marshal.PtrToStructure(lParam, typeof(WINDOWPOS));
-                    var src = PresentationSource.FromVisual(this);
-                    if ((pos.flags & 0x0002) != 0) return IntPtr.Zero;
-                    var wnd = (Window)HwndSource.FromHwnd(hwnd)?.RootVisual;
-                    if (wnd == null || src == null) return IntPtr.Zero;
-
-                    var dpiX = src.CompositionTarget?.TransformToDevice.M11 ?? 1;
-                    var dpiY = src.CompositionTarget?.TransformToDevice.M22 ?? 1;
-
-                    var changed = false;
-                    if (pos.cx / dpiX < MinWidth) { pos.cx = (int)(MinWidth * dpiX); changed = true; }
-                    if (pos.cy / dpiY < MinHeight) { pos.cy = (int)(MinHeight * dpiY); changed = true; }
-                    if (!changed) return IntPtr.Zero;
-
-                    Marshal.StructureToPtr(pos, lParam, true);
-                    handled = true;
-                    break;
-            }
-            return IntPtr.Zero;
+            if (WindowState == WindowState.Maximized)
+                BorderThickness = new Thickness(8);
+            else BorderThickness = new Thickness(0);
         }
     }
 }

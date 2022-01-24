@@ -5,7 +5,7 @@ namespace ThemeCommons.Controls
 {
     public class Popup : ContentControl
     {
-        public static DependencyProperty HeaderProperty = DependencyProperty.Register(nameof(Header), typeof(string), typeof(Popup));
+        public static readonly DependencyProperty HeaderProperty = DependencyProperty.Register(nameof(Header), typeof(string), typeof(Popup));
         public string Header
         {
             get => (string)GetValue(HeaderProperty);

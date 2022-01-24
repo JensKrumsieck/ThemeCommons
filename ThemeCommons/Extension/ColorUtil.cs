@@ -11,7 +11,7 @@ namespace ThemeCommons.Extension
         /// <param name="input"></param>
         /// <param name="amount"></param>
         /// <returns></returns>
-        public static HSVColor Darken(this HSVColor input, double amount) => new HSVColor(input.A, input.H, input.S, Math.Pow(input.V, amount));
+        public static HSVColor Darken(this HSVColor input, double amount) => new(input.A, input.H, input.S, Math.Pow(input.V, amount));
 
         /// <summary>
         /// Lightens Color by Amount
@@ -19,6 +19,6 @@ namespace ThemeCommons.Extension
         /// <param name="input"></param>
         /// <param name="amount"></param>
         /// <returns></returns>
-        public static HSVColor Lighten(this HSVColor input, double amount) => new HSVColor(input.A, input.H, input.S, Math.Pow(input.V, 1 / amount));
+        public static HSVColor Lighten(this HSVColor input, double amount) => new(input.A, input.H, input.S, Math.Pow(input.V, 1 / amount));
     }
 }

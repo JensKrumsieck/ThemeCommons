@@ -82,7 +82,7 @@ namespace ThemeCommons.Primitives
         /// </summary>
         public string HexString => HSVColor.ToHexString();
 
-        private readonly SolidColorBrush _hueBrush = new SolidColorBrush();
+        private readonly SolidColorBrush _hueBrush = new();
         public SolidColorBrush HueBrush
         {
             get
@@ -92,7 +92,7 @@ namespace ThemeCommons.Primitives
             }
         }
 
-        private readonly SolidColorBrush _brush = new SolidColorBrush();
+        private readonly SolidColorBrush _brush = new ();
         public SolidColorBrush Brush
         {
             get

@@ -2,10 +2,10 @@
   <PropertyGroup>
     <PackageId>JensKrumsieck.ThemeCommons</PackageId>
     <Authors>Jens Krumsieck</Authors>
-    <TargetFramework>net5.0-windows</TargetFramework>
-    <LangVersion>9.0</LangVersion>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <LangVersion>latest</LangVersion>
     <UseWPF>true</UseWPF>
-    <Version>1.0.0-rc1</Version>
+    <Version>1.0.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageProjectUrl>https://github.com/JensKrumsieck/ThemeCommons</PackageProjectUrl>
     <RepositoryUrl>https://github.com/JensKrumsieck/ThemeCommons</RepositoryUrl>
@@ -31,6 +31,5 @@
     <Resource Include="Assets\Montserrat\Montserrat-SemiBoldItalic.ttf" />
     <Resource Include="Assets\Montserrat\Montserrat-Thin.ttf" />
     <Resource Include="Assets\Montserrat\Montserrat-ThinItalic.ttf" />
-    <Resource Include="Assets\noise.png" />
   </ItemGroup>
 </Project>

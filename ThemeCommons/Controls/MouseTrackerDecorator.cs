@@ -15,9 +15,9 @@ namespace ThemeCommons.Controls
             set
             {
                 if (base.Child != null)
-                    base.Child.MouseMove -= _controlledObject_MouseMove;
+                    base.Child.MouseMove -= TheMouseMove;
                 base.Child = value;
-                base.Child.MouseMove += _controlledObject_MouseMove;
+                base.Child.MouseMove +=  TheMouseMove;
             }
         }
 
@@ -33,7 +33,7 @@ namespace ThemeCommons.Controls
             set => SetValue(RelativeMousePositionProperty, value);
         }
 
-        private void _controlledObject_MouseMove(object sender, MouseEventArgs e)
+        private void TheMouseMove(object sender, MouseEventArgs e)
         {
             var p = e.GetPosition(base.Child);
             MousePosition = p;

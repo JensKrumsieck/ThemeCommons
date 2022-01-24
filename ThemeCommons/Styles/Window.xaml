@@ -5,34 +5,27 @@
     <Style TargetType="{x:Type controls:DefaultWindow}" x:Key="DefaultWindow">
         <Setter Property="FontFamily" Value="{markupExtensions:Font FontFamily=Montserrat}"/>
         <Setter Property="FontSize" Value="12"/>
-        <Setter Property="WindowStyle" Value="None"/>
         <Setter Property="TextOptions.TextFormattingMode" Value="Ideal"/>
         <Setter Property="TextOptions.TextRenderingMode" Value="Auto"/>
         <Setter Property="TextOptions.TextHintingMode" Value="Auto"/>
         <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="Background" Value="WhiteSmoke"/>
+        <Setter Property="MinHeight" Value="150"/>
         <Setter Property="TitlebarHeight" Value="35"/>
-        <Setter Property="AllowsTransparency" Value="True"/>
         <Setter Property="TitlebarBackground" Value="{DynamicResource Dark}"/>
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
-                <WindowChrome CaptionHeight="35" GlassFrameThickness="0" NonClientFrameEdges="None"
-                              ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}"
-                              CornerRadius="0" UseAeroCaptionButtons="False"/>
+                <WindowChrome CaptionHeight="35" NonClientFrameEdges="None"
+                              ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}" UseAeroCaptionButtons="False"/>
             </Setter.Value>
         </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type controls:DefaultWindow}">
-                    <Border x:Name="PART_Container" BorderThickness="0">
+                    <Border x:Name="PART_Container" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
                         <Grid>
-                            <Rectangle x:Name="tintLayer" Fill="{TemplateBinding Background}" Opacity=".85"/>
-                            <Rectangle x:Name="noiseLayer" Opacity=".01">
-                                <Rectangle.Fill>
-                                    <ImageBrush ImageSource="pack://application:,,,/ThemeCommons;component/Assets/noise.png"
-                                                TileMode="Tile" Stretch="None"
-                                                ViewportUnits="Absolute" Viewport="0,0,128,128"/>
-                                </Rectangle.Fill>
-                            </Rectangle>
+                            <Rectangle x:Name="tintLayer" Fill="{TemplateBinding Background}"/>
                             <DockPanel>
                                 <controls:Titlebar  DockPanel.Dock="Top" Background="{TemplateBinding TitlebarBackground}"
                                                    x:Name="PART_Titlebar" Content="{TemplateBinding TitlebarContent}" Height="{TemplateBinding TitlebarHeight}"/>

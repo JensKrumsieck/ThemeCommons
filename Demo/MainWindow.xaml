@@ -35,25 +35,26 @@
             </StackPanel>
         </controls:Popup>
         <DockPanel>
-        <ToolBarTray DockPanel.Dock="Top">
-            <ToolBar Style="{DynamicResource MaterialDesignToolBar}">
-                <Button>LOL</Button>
-                <ToggleButton/>
-                <TextBox Text="Type Me"/>
-                <Button extension:ControlExtension.AttachedIcon="Folder" ToolTip="Open"/>
-                <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB51;"/>
-                <Separator/>
-                <ListBox SelectedIndex="2" SelectionMode="Single">
-                    <ListBoxItem Style="{StaticResource ToolbarListItem}" extension:ControlExtension.AttachedIcon="MagnifyScan"/>
-                    <ListBoxItem Style="{StaticResource ToolbarListItem}" extension:ControlExtension.AttachedIcon="EyeDropperVariant"/>
-                    <ListBoxItem Style="{StaticResource ToolbarListItem}" extension:ControlExtension.AttachedIcon="FitToPageOutline" Content="Test"/>
-                    <ListBoxItem Style="{StaticResource ToolbarListItem}" extension:ControlExtension.AttachedIcon="Love" Content="Test" FontSize="9" extension1:ControlExtension.StackPanelOrientation="Vertical"/>
-                    <ListBoxItem Style="{StaticResource ToolbarListItem}" Content="No Icon 🤔"/>
-                </ListBox>
-            </ToolBar>
-        </ToolBarTray>
-        <UniformGrid Margin="8">
-            <UniformGrid>
+            <ToolBarTray DockPanel.Dock="Top">
+                <ToolBar Style="{DynamicResource MaterialDesignToolBar}">
+                    <Button>LOL</Button>
+                    <ToggleButton/>
+                    <TextBox Text="Type Me"/>
+                    <Button extension:ControlExtension.AttachedIcon="Folder" ToolTip="Open"/>
+                    <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB51;"/>
+                    <Separator/>
+                    <ListBox SelectedIndex="2" SelectionMode="Single">
+                        <ListBoxItem Style="{StaticResource ToolbarListItem}" extension:ControlExtension.AttachedIcon="MagnifyScan"/>
+                        <ListBoxItem Style="{StaticResource ToolbarListItem}" extension:ControlExtension.AttachedIcon="EyeDropperVariant"/>
+                        <ListBoxItem Style="{StaticResource ToolbarListItem}" extension:ControlExtension.AttachedIcon="FitToPageOutline" Content="Test"/>
+                        <ListBoxItem Style="{StaticResource ToolbarListItem}" extension:ControlExtension.AttachedIcon="Love" Content="Test" FontSize="9" extension1:ControlExtension.StackPanelOrientation="Vertical"/>
+                        <ListBoxItem Style="{StaticResource ToolbarListItem}" Content="No Icon 🤔"/>
+                    </ListBox>
+                </ToolBar>
+            </ToolBarTray>
+            <Label Content="Bottom" DockPanel.Dock="Bottom" Foreground="{StaticResource Dark}"/>
+            <UniformGrid Margin="8">
+                <UniformGrid>
                     <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB51;"/>
                     <Button Style="{StaticResource RoundedIconButton}" Content="&#xE106;"/>
                     <Button Style="{StaticResource RoundedIconButton}" Content="&#xEB4C;"/>
@@ -63,22 +64,22 @@
                     <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="True"/>
                     <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="True" Foreground="Red"/>
                     <ToggleButton Style="{StaticResource RoundedIconToggleButton}" Content="&#xEB52;" IsChecked="False" Foreground="Red" Background="{DynamicResource Light}"/>
+                </UniformGrid>
+                <UniformGrid>
+                    <Button Content="Hello" Click="ButtonBase_OnClick"/>
+                    <Button Content="Disabled" IsEnabled="False"/>
+                    <Button Content="Accent" Style="{DynamicResource AccentButton}"/>
+                    <Button Content="MaterialFlat" Style="{DynamicResource MaterialDesignFlatButton}"/>
+                    <Button Content="Material Raised" Style="{DynamicResource MaterialDesignRaisedButton}"/>
+                </UniformGrid>
+                <UniformGrid>
+                    <UniformGrid>
+                        <controls:ColorPickerTextBox/>
+                        <TextBox Text="Type Me"/>
+                        <TextBox Text="Disabled" IsEnabled="False"/>
+                    </UniformGrid>
+                </UniformGrid>
             </UniformGrid>
-            <UniformGrid>
-                <Button Content="Hello" Click="ButtonBase_OnClick"/>
-                <Button Content="Disabled" IsEnabled="False"/>
-                <Button Content="Accent" Style="{DynamicResource AccentButton}"/>
-                <Button Content="MaterialFlat" Style="{DynamicResource MaterialDesignFlatButton}"/>
-                <Button Content="Material Raised" Style="{DynamicResource MaterialDesignRaisedButton}"/>
-            </UniformGrid>
-            <UniformGrid>
-               <UniformGrid>
-                   <controls:ColorPickerTextBox/>
-                   <TextBox Text="Type Me"/>
-                   <TextBox Text="Disabled" IsEnabled="False"/>
-               </UniformGrid>
-            </UniformGrid>
-       </UniformGrid>
         </DockPanel>
     </Grid>
 </controls:DefaultWindow>

@@ -46,10 +46,10 @@ namespace ThemeCommons.Controls
             set => SetValue(SelectedHexStringProperty, value);
         }
 
-        private readonly ViewColor _selectedColor = new ViewColor();
+        private readonly ViewColor _selectedColor = new();
         private Point? _selectedColorShadingPosition;
-        private readonly TranslateTransform _shadingSelectorTransform = new TranslateTransform();
-        private readonly TranslateTransform _aSelectorTransform = new TranslateTransform();
+        private readonly TranslateTransform _shadingSelectorTransform = new ();
+        private readonly TranslateTransform _aSelectorTransform = new ();
 
         public ColorPicker()
         {
@@ -165,7 +165,7 @@ namespace ThemeCommons.Controls
         {
             if (string.IsNullOrEmpty(text)) return;
             //text is to short and does not contain #
-            if (text.Length <= 6 && !text.Contains("#")) text = "#" + text;
+            if (text.Length <= 6 && !text.Contains('#')) text = "#" + text;
             //text is RGB but not ARGB
             if (text.Length == 7) text = text.Replace("#", "#FF");
             //Now should be ARGB, if not -> go away, it can also be three int shorthand color
