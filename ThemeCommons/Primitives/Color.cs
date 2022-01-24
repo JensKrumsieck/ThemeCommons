@@ -92,7 +92,7 @@ namespace ThemeCommons.Primitives
             }
         }
 
-        private readonly SolidColorBrush _brush = new ();
+        private readonly SolidColorBrush _brush = new();
         public SolidColorBrush Brush
         {
             get

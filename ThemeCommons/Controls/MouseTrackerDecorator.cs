@@ -17,7 +17,7 @@ namespace ThemeCommons.Controls
                 if (base.Child != null)
                     base.Child.MouseMove -= TheMouseMove;
                 base.Child = value;
-                base.Child.MouseMove +=  TheMouseMove;
+                base.Child.MouseMove += TheMouseMove;
             }
         }
 

@@ -48,8 +48,8 @@ namespace ThemeCommons.Controls
 
         private readonly ViewColor _selectedColor = new();
         private Point? _selectedColorShadingPosition;
-        private readonly TranslateTransform _shadingSelectorTransform = new ();
-        private readonly TranslateTransform _aSelectorTransform = new ();
+        private readonly TranslateTransform _shadingSelectorTransform = new();
+        private readonly TranslateTransform _aSelectorTransform = new();
 
         public ColorPicker()
         {
