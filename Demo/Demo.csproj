@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ThemeCommons.MaterialDesign\ThemeCommons.MaterialDesign.csproj" />
-    <PackageReference Include="MaterialDesignThemes" Version="4.3.0" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.4.0" />
   </ItemGroup>
 
 </Project>
